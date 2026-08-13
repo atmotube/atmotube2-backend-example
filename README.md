@@ -103,11 +103,11 @@ curl -X POST http://localhost:8000/measurements \
   -H "Authorization: Bearer changeme" \
   -H "Content-Type: application/json" \
   -d '{
-        "mac": "AA:BB:CC:DD:EE:FF",
+        "mac": "AABBCCDDEEFF",
         "data": [[0, 1750000000, 22.5, 45.0, 1013.0, 50, 120.0, 20, 450, 3.2, 8.1, 10.4, null, null, null, null, 87, 0]]
       }'
 
-curl "http://localhost:8000/measurements?mac=AA:BB:CC:DD:EE:FF" \
+curl "http://localhost:8000/measurements?mac=AABBCCDDEEFF" \
   -H "Authorization: Bearer changeme"
 ```
 
@@ -117,7 +117,7 @@ To let a real phone/device send data to your local server instead of
 Atmotube Cloud, expose port 8000 with [ngrok](https://ngrok.com/):
 
 ```bash
-ngrok http 8000
+./ngrok http 8000
 ```
 
 ngrok prints a public HTTPS URL, e.g. `https://abcd1234.ngrok-free.app`.
